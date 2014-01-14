@@ -37,7 +37,10 @@ public class Client {
                 for (int i=0; i<999999999; i++) {
                 	fromUser = String.format("%09d", i);
                 	System.out.println("Client: " + fromUser);
+                	
                 	out.println(fromUser);
+                	
+                	if (!socket.isConnected() || socket.isClosed()) break;
                 }
             }
         } catch (UnknownHostException e) {
